@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css"> <!-- Enlace a un archivo CSS externo llamado 'styles.css' -->
+    <title>Ejercicio 5: Desarrollo de la Web</title>
+  </head>
+
+  <body>
+    <!-- CABECERA -->
+    <header>
+      <!-- Nombre de la empresa -->
+      <div class="name-empresa-container">
+        <h1>SoftEdge</h1>
+      </div>
+
+      <!-- Logo de la empresa -->
+      <div class="logo-container">
+        <img src="./assets/logo.png" alt="Logotipo" height="180" width="180">
+      </div>
+
+      <!-- Nuestro producto destacado -->
+      <div class="producto-estrella-container">
+        <img src="./assets/producto-estrella.png" alt="Producto Estrella" height="100" width="100">
+      </div>
+
+      <!-- Botones -->
+      <div class="btnHeader-container">
+        <input type="submit" name="btnInicioSesion" value="Iniciar sesión" id="btnInicioSesion">
+        <input type="submit" name="btnContacto" value="Contacto" id="btnContacto">
+      </div>
+    </header>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav>
+      <ul>
+        <li><a href="#desarrolloSoftware">Desarrollo de Software</a></li>
+        <li><a href="#consultoria">Consultoría</a></li>
+        <li><a href="#administracionRedes">IAR</a></li>
+        <li><a href="#zonaPrivada">Zona privada</a></li>
+      </ul>
+    </nav>
+
+        <!-- MAIN (SECTION) -->
+        <!-- Principal (sólo puede haber 1 por web) -->
+        <main>
+          <!-- Section 1 -->
+          <section class="primera-section">
+              <h2>· Sección 1 ·</h2>
+
+              <!-- Primera zona -->
+              <article id="zona1">
+                <h2>· Productos ·</h2>
+
+                <!-- Nuestros productos -->
+                <div class="productos-container">
+                  <!-- Tarjeta de cada producto -->
+                  <div class="tarjeta">
+                    <img src="./assets/producto-estrella.png" alt="Photoshop">
+                    <h3>Photoshop</h3>
+                    <p>5/5 ⭐</p>
+                  </div>
+
+                  <div class="tarjeta">
+                    <img src="./assets/adobe-ilustrator.png" alt="Adobe Illustrator">
+                    <h3>Adobe Illustrator</h3>
+                    <p>4,5/5 ⭐</p>
+                  </div>
+
+                  <div class="tarjeta">
+                    <img src="./assets/after-effects.png" alt="After Effects">
+                    <h3>After Effects</h3>
+                    <p>4,9/5 ⭐</p>
+                  </div>
+
+                  <div class="tarjeta">
+                    <img src="./assets/adobe-indisign.png" alt="Adobe InDesign">
+                    <h3>Adobe InDesign</h3>
+                    <p>4,2/5 ⭐</p>
+                  </div>
+
+                  <div class="tarjeta">
+                    <img src="./assets/adobe-premier.png" alt="Adobe Premier">
+                    <h3>Adobe Premier</h3>
+                    <p>4,8/5 ⭐</p>
+                  </div>
+
+                  <div class="tarjeta">
+                    <img src="./assets/adobe-creative-cloud.png" alt="Adobe Creative Cloud">
+                    <h3>Adobe Creative Cloud</h3>
+                    <p>4/5 ⭐</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Segunda zona -->
+              <article id="zona2">
+                <h2>· Tabla de Productos ·</h2>
+
+                <!-- Tabla con cada producto -->
+                <table>
+                  <!-- Descripción de la tabla -->
+                  <caption>¡Nuestros mejores productos!</caption>
+
+                  <!-- Encabezado de la tabla -->
+                  <thead>
+                    <tr>
+                      <th>Producto</th>
+                      <th>Clientes</th>
+                      <th>Clientes último año</th>
+                      <th>Valoración Media</th>
+                    </tr>
+                  </thead>
+
+                  <!-- Contenido de la tabla -->
+                  <tbody>
+                    <tr>
+                      <td>Photoshop</td>
+                      <td>2200</td>
+                      <td>200</td>
+                      <td>5/5 ⭐</td>
+                    </tr>
+
+                    <tr>
+                      <td>Adobe Illustrator</td>
+                      <td>1000</td>
+                      <td>100</td>
+                      <td>4,5/5 ⭐</td>
+                    </tr>
+
+                    <tr>
+                      <td>After Effects</td>
+                      <td>2050</td>
+                      <td>50</td>
+                      <td>4,9/5 ⭐</td>
+                    </tr>
+
+                    <tr>
+                      <td>Adobe InDesign</td>
+                      <td>800</td>
+                      <td>100</td>
+                      <td>4,2/5 ⭐</td>
+                    </tr>
+
+                    <tr>
+                      <td>Adobe Premier</td>
+                      <td>1400</td>
+                      <td>200</td>
+                      <td>4,8/5 ⭐</td>
+                    </tr>
+
+                    <tr>
+                      <td>Adobe Creative Cloud</td>
+                      <td>930</td>
+                      <td>30</td>
+                      <td>4/5 ⭐</td>
+                    </tr>
+                  </tbody>
+
+                  <!-- Pie de la tabla -->
+                  <tfoot>
+                    <tr>
+                      <td>Total</td>
+                      <td>8380</td>
+                      <td>680</td>
+                      <td>4.6 ⭐</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </article>
+
+              <!-- Tercera zona -->
+              <article id="zona3">
+                <h2>· Empresas que utilizan nuestro producto ·</h2>
+
+                <!-- Empresas que utilizan nuestro producto -->
+                <div class="empresas-container">
+
+                  <!-- Tarjeta de cada empresa -->
+                  <div class="tarjeta">
+                   <img src="./assets/coderty.jpg" alt="Coderty" class="logo-empresa">
+                   <h2>Coderty</h2>
+
+                   <!-- Producto que han comprado la empresa -->
+                    <div>
+                     <img src="./assets/after-effects.png" alt="After Effects">
+                     <p>After Effects</p>
+                    </div>
+
+                    <!-- Comentarios de las empresas -->
+                    <div class="comments">
+                      <p>· Increíble impacto visual.</p>
+                      <p>· Lleva la creatividad al siguiente nivel.</p>
+                    </div>
+
+                    <!-- Texto oculto -->
+                    <div class="hidden-text">Utilizando nuestro producto desde el año 2019.</div>
+                   </div>
+
+                 <div class="tarjeta">
+                   <img src="./assets/noa-estudio.png" alt="Noa Estudio" class="logo-empresa">
+                   <h2>Noa Estudio</h2>
+                   <div>
+                     <img src="./assets/producto-estrella.png" alt="Photoshop">
+                     <p>Photoshop</p>
+                   </div>
+                    <div class="comments">
+                      <p>· Es nuestra arma secreta para la edición de imágenes.</p>
+                      <p>· Incrible para diseño gráfico o retoque fotográfico.</p>
+                    </div>
+                    <div class="hidden-text">Utilizando nuestro producto desde el año 2017.</div>
+                  </div>
+
+                  <div class="tarjeta">
+                    <img src="./assets/hiberus.png" alt="Hiberus" class="logo-empresa">
+                    <h2>Hiberus</h2>
+                    <div>
+                      <img src="./assets/adobe-premier.png" alt="Adobe Premier">
+                      <p>Adobe Premier</p>
+                    </div>
+                    <div class="comments">
+                      <p>· Nuestra elección principal para la edición de video.</p>
+                      <p>· La gama de efectos es impresionante.</p>
+                    </div>
+                    <div class="hidden-text">Utilizando nuestro producto desde el año 2020.</div>
+                  </div>
+
+                  <div class="tarjeta">
+                    <img src="./assets/seyte.png" alt="Seyte" class="logo-empresa">
+                    <h2>Seyte</h2>
+                    <div>
+                      <img src="./assets/adobe-creative-cloud.png" alt="Adobe Creative Cloud">
+                      <p>Adobe Creative Cloud</p>
+                    </div>
+                    <div class="comments">
+                      <p>· Simplifica nuestra vida creativa.</p>
+                      <p>· Organizado, eficiente y lleno de posibilidades.</p>
+                    </div>
+                    <div class="hidden-text">Utilizando nuestro producto desde el año 2018.</div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Cuarta zona -->
+              <article id="zona4">
+                <h2>· Producto Destacado ·</h2>
+                <h3>Photoshop</h3>
+                <img src="./assets/producto-estrella.png" alt="Photoshop" height="200" width="200">
+                <p>Con un diseño elegante y funcionalidad excepcional, este producto está diseñado para simplificar tu vida. Ofrecemos un soporte técnico 24/7 para garantizar que aproveches al máximo cada característica.</p>
+                <strong>Precio de lanzamiento: $99.99 <del>$149.99</del></strong>
+              </article>
+          </section>
+          
+          <!-- Section 2 -->
+          <section class="segunda-section">
+            <h2 class="title-noticia">· ODS 8: Trabajo Decente y Crecimiento Económico ·</h2>
+
+            <!-- Párrafos del objetivo -->
+            <div class="ods-container">
+              <p>
+                El Objetivo de Desarrollo Sostenible 8 busca promover el
+                crecimiento económico sostenido, inclusivo y sostenible, el empleo
+                pleno y productivo y el trabajo decente para todos.
+              </p>
+              <p>
+                Una medida para contribuir al ODS 8 es fomentar la creación de
+                empleo sostenible, proporcionar empleo digno.
+              </p>
+              <p>
+                El sector privado tiene un rol claro en la consecución de este
+                Objetivo, ya que es un actor principal para el crecimiento
+                económico y la creación de puestos de trabajo.
+              </p>
+              <p>
+                La pandemia ha acelerado la digitalización y transformado el acceso
+                a la financiación. A nivel mundial, en 2021, el 76 % de las 
+                personas adultas tenía cuentas bancarias, o cuentas en entidades 
+                reguladas, frente al 62 % en 2014.
+              </p>
+            </div>
+  
+            <!-- Imágenes del objetivo -->
+            <div>
+              <img src="./assets/ods8.jpg" alt="ODS8" class="ods8-img">
+              <img src="./assets/ods8-caracteristicas.jpg" alt="ODS8 Características" class="ods8-img-caracteristicas">
+            </div>
+          </section>
+        </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+      <!-- Contenedor con el footer -->
+      <div class="footer-container">
+
+        <!-- Zona de cookies - Zona 1 -->
+        <div class="cookie-block">
+          <h3>Cookies</h3>
+          <label><input type="checkbox"> Cookies obligatorias</label><br>
+          <label><input type="checkbox"> Cookies de funcionalidad</label><br>
+          <label><input type="checkbox"> Cookies publicitarias</label>
+        </div>
+  
+        <!-- Zona de enlaces - Zona 2 -->
+        <div class="info-block">
+          <h3>Enlaces</h3>
+          <ul>
+            <li>Soporte</li>
+            <li>Política de Privacidad</li>
+            <li>Acerca de</li>
+          </ul>
+        </div>
+  
+        <!-- Zona de redes sociales - Zona 3 -->
+        <div class="social-block">
+          <h3>Redes Sociales</h3>
+          <div class="social-icons">
+            <img src="./assets/facebook.png" alt="Facebook">
+            <img src="./assets/linkedin.png" alt="LinkedIn">
+            <img src="./assets/instagram.png" alt="instagram">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

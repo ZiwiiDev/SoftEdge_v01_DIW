@@ -1,0 +1,213 @@
+/* Importo una fuente de internet desde Google Fonts para títulos */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
+/* Defino la fuente Open Sans de forma local desde mi equipo */
+@font-face {
+    font-family: "Open Sans";
+    src: url("https://fonts.google.com/specimen/Open+Sans?query=Open+Sans");
+    src: local('OpenSans-LightItalic'), url('../fonts/OpenSans-LightItalic.ttf') format('truetype');
+}
+/*-------------------------------------------------------------------------------*/
+/* Defino variables para colores, fuentes y otros estilos globales */
+:root {
+    --color-background: #fffdd1;    /* Creo variable para el color de fondo principal */
+    --color-text: #2c3e50;  /* Creo variable para el color de texto */
+    --color-enlace: #0080ff;    /* Color de enlaces */
+    --color-highlight: #ffc4a2; /* Creo variable para el color para texto destacado */
+    --font-primary: 'Open Sans', sans-serif;    /* Creo variable para la fuente principal */
+    --font-secondary: 'Merriweather', serif;    /* Creo variable para la fuente secundaria */
+    --color-nav: #e2e2e2;   /* Color de fondo de la barra de navegación */
+    --color-section: #dfcdff;   /* Color de fondo de secciones principales */
+    --color-aside: rgb(248, 136, 211);  /* Color de fondo de la barra lateral */
+    --color-borde: rgb(0, 0, 0);    /* Color del borde */
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos generales para el HTML y el cuerpo del documento */
+html {
+    height: 100%;   /* Establezco la altura del html al 100% */
+}
+/*-------------------------------------------------------------------------------*/
+body {
+    background-color: var(--color-background);  /* Le aplico el color de fondo mediante variable */
+    display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+    flex-direction: column; /* Determino la dirección en la que se ordenarán los elementos */
+    min-height: 100%;   /* Defino la altura mínima de la web */
+    overflow: hidden; /* Oculto tanto el scroll vertical como horizontal */
+    margin: auto;   /* Defino márgenes automáticos */
+}
+/*-------------------------------------------------------------------------------*/
+/* Aseguro que el padding no afecte el ancho total */
+header, nav, section, aside, footer {
+    box-sizing: border-box;    /* Ajusto el modelo de caja para incluir el borde en el tamaño total */
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos específicos para el encabezado */
+header {
+    display: grid;  /* Defino una cuadrícula bidimensional para posicionar los elementos */
+    align-items: stretch; /* Estiro los subelementos de la cabecera para rellenar */
+    grid-template-columns: 1fr 1fr 1fr; /* Divido el header en tres columnas */
+    border: 2px solid var(--color-borde);   /* Aplico un borde de 2px sólido con color de una variable */
+}
+
+/* Estilos para el título h1 dentro del encabezado */
+header h1 {
+    font-family: var(--font-secondary); /* Establezco la fuente para el título de la empresa mediante fuente de internet */
+    letter-spacing: 30px;   /* Separación de 30px entre cada carácter */
+    justify-content: center;    /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+    align-content: center;  /* Ajusto las líneas dentro del contenedor cuando haya espacio extra */
+    text-shadow: 5px 5px 5px #fbff00, 10px 10px 10px #ff0000;   /* Aplico sombra de dos colores diferentes */
+    grid-column: span 1; /* Hace que el h1 abarque una columna completa */
+    margin: 40px 0; /* Añado un margen de 40px arriba y abajo */
+}
+
+/* Estilos para las subzonas de la cabecera */
+.subzona {
+    display: grid;
+    padding: 5%;
+    grid-column: span 1; /* Cada subzona abarca una columna completa */
+    border: 2px solid var(--color-borde);   /* Aplico un borde de 2px sólido con color de una variable */
+    justify-content: center;    /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+    align-content: center;  /* Ajusto las líneas dentro del contenedor cuando haya espacio extra */
+    background-color: #d7fdf8;/* Color de fondo para la primera subzona */
+    font-weight: bold;  /* Lo pongo en negrita */
+}
+
+/* Estilos específicos para algunas subzonas usando :nth-child */
+.subzona:nth-child(2),
+.subzona:nth-child(3) {
+    font-family: var(--font-primary);   /* Establezco la fuente para las subzonas */
+    font-size: 20px;    /* Establezco el tamaño de la fuente */
+}
+
+.subzona:nth-child(2) {
+    background-color: #a9e4ff; /* Color de fondo para la segunda subzona */
+}
+
+.subzona:nth-child(3) {
+    background-color: #95cfff;  /* Color de fondo para la tercera subzona */
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para el menú de navegación */
+nav {
+    font-family: var(--font-primary);   /* Establezco la fuente para las subzonas */
+    font-size: 20px;    /* Establezco el tamaño de la fuente */
+    background-color: var(--color-nav); /* Le aplico el color de fondo mediante variable */
+    padding: 20px;  /* Establezco padding de 20px */
+    border: 2px solid var(--color-borde);   /* Le aplico el borde mediante variable */
+    font-weight: bold;  /* Lo pongo en negrita */
+    text-align: center; /* Centro el texto */
+    grid-column: span 3;    /* Indico cuántas celdas debe contener el nav */
+}
+
+nav ul {
+    list-style: none;   /* Quito los puntos de la lista desordenada */
+}
+/*---------------------------------------------------------------------*/
+/* Para cuando añada enlaces quitarles el subrayado
+nav a {
+    text-decoration: none;
+}
+*/
+
+/* Para cuando añada los enlaces que se posicionen uno a la derecha de otro
+nav li {
+    display: inline;
+}
+*/
+/*---------------------------------------------------------------------*/
+/* Estilos para el main (section) y el aside */
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Divido en dos columnas */
+}
+
+/* Estilos para el main */
+.container-main {
+    background-color: var(--color-section);
+    border: 2px solid var(--color-borde);
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* Dos filas: section 1 y 2 */
+    grid-template-columns: 1fr; /* Divido en una columna */
+    justify-content: center;
+    align-content: center;
+}
+
+/* Estilos para los 2 section */
+.primera-section,
+.segunda-section {
+    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
+    border: 2px solid var(--color-borde);
+    text-align: center; /* Centro el texto */
+    width: 100%;    /* Para que ocupen todo el espacio horizontal */
+    padding-bottom: 3.5%;
+    height: 100%;   /* Para que ocupen todo el espacio vertical */
+    font-family: var(--font-primary);
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para el aside */
+aside {
+    background-color: var(--color-aside);
+    text-align: center;
+    padding: 10px;
+    border: 2px solid var(--color-borde);
+    font-family: var(--font-primary);
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para el footer */
+footer {
+    display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+    flex-direction: row;    /* Determino la dirección en la que se ordenarán los elementos en el espacio */
+    background-color: var(--color-highlight);
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color-borde); /* Borde con variable de color definida */
+    font-family: var(--font-primary), 'Lucida Sans', 'Lucida Sans Regular';
+    margin-top: auto; /* Empujo el footer hacia abajo ocupando el espacio restante */
+    box-sizing: border-box; /* Ajusto el modelo de caja para incluir el borde en el tamaño total */
+    font-weight: bold;  /* Lo pongo en negrita */
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;  /* Determino la dirección en la que se ordenarán los elementos en el espacio */
+    border: 2px solid var(--color-borde); /* Borde con variable de color definida */
+    width: 20%; /* Ocupo un 20% del espacio disponible horizontalmente */
+    margin: 0; /* Elimina márgenes */
+}
+
+.nombre-zone,
+.apellidos-zone,
+.localidad-zone {
+    margin: 0; /* Elimino márgenes */
+}
+
+.nombre-zone {
+    display: flex;
+    align-items: end;   /* Alineo el nombre a la derecha del bloque */
+    color: var(--color-text);
+    font-size: 20px; /* Tamaño de fuente diferente */
+}
+
+.apellidos-zone {
+    display: flex;
+    justify-content: start; /* Alineo los apellidos a la izquierda del bloque */
+    text-shadow: 5px 0px 5px #00FF00; /* Sombra de derecha a izquierda */
+    font-size: 25px; /* Tamaño de fuente diferente */
+}
+
+.localidad-zone {
+    display: flex;
+    align-items: center;    /* Alineo de forma central los textos */
+}
+
+.localidad-zone span {
+    margin-right: 30px; /* Separación entre palabras */
+    color: #FF5733; /* Color diferente para la localidad */
+    font-size: 15px; /* Tamaño de fuente diferente */
+}
+
+.localidad-zone p {
+    color: #1100ff; /* Color diferente para la localidad */
+    font-size: 20px; /* Tamaño de fuente diferente */
+}
+/*-------------------------------------------------------------------------------*/

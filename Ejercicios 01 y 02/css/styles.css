@@ -1,0 +1,36 @@
+:root {
+    --color-background: #fffdd1;    /* Creo variable para el color de fondo */
+    --color-text: #2c3e50;  /* Creo variable para el color de texto */
+    --color-highlight: #ffc4a2; /* Creo variable para el color para texto destacado */
+    --font-primary: 'Open Sans', sans-serif;    /* Creo variable para la fuente principal */
+    --font-secondary: 'Merriweather', serif;    /* Creo variable para la fuente secundaria */
+}
+
+body {
+    background-color: var(--color-background);  /* Aplico color de fondo */
+    color: var(--color-text);   /* Aplico color de texto */
+    font-family: var(--font-primary);   /* Aplico color principal de texto */
+}
+
+header {
+    background-color: var(--color-highlight);   /* Aplico color de texto destacado */
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin: 20px;
+}
+
+h1, h2 {
+    font-family: var(--font-secondary); /* Aplico color de texto secundario */
+}
+
+footer {
+    background-color: var(--color-highlight);   /* Aplico color de texto destacado */
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

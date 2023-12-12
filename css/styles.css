@@ -1,0 +1,690 @@
+/*-------------------------------------------------------------------------------*/
+/* Temática de nuestra web: "Desarrollo y venta de software e instalación y mantenimiento de redes locales y servidores" */
+/*-------------------------------------------------------------------------------*/
+/* Importo una fuente de internet desde Google Fonts para títulos */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
+/* Defino la fuente Open Sans de forma local desde mi equipo */
+@font-face {
+    font-family: "Open Sans";
+    src: url("https://fonts.google.com/specimen/Open+Sans?query=Open+Sans");
+    src: local('OpenSans-SemiBold'), url('../fonts/OpenSans-SemiBold.ttf') format('truetype');
+}
+/*-------------------------------------------------------------------------------*/
+/* Defino variables para colores, fuentes y otros estilos globales */
+:root {
+    --font-primary: 'Open Sans', sans-serif;    /* Creo variable para la fuente principal */
+    --font-secondary: 'Merriweather', serif;    /* Creo variable para la fuente secundaria */
+    --color-text: #2c3e50;  /* Creo variable para el color de texto */
+    --color-highlight: #ffc4a2; /* Creo variable para el color para texto destacado */
+    --color-enlace: #0080ff;    /* Color de enlaces */
+    --color-nav: #1f1f1f;   /* Color de fondo de la barra de navegación */
+    --color-section: #dfcdff;   /* Color de fondo de secciones principales */
+    --color-negro: rgb(0, 0, 0);    /* Color del borde */
+    --color-botones-background: #0080ff;   /* Color para el fondo de los botones */
+    --color-texto-blanco: white;  /* Color blanco para texto */
+    --color-blanco-clarito: ghostwhite; /* Color blanco clarito para fondo de artricles */
+    --color-footer: rgb(235, 235, 235); /* Color para el footer */
+    --color-tabla: #ddd;/* Color para las celdas de la tabla */
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos generales para el HTML y el cuerpo del documento */
+html {
+    height: 100%;   /* Establezco la altura del html al 100% */
+}
+
+/* Estilos para el BODY */
+body {
+    margin: 0;  /* 0 de margen */
+    padding: 0; /* 0 de padding */
+    background: url('../assets/fondo.gif') center center fixed; /* Establezco el .gif para fondo */
+    overflow-x: hidden; /* Para que no se pueda hacer scroll horizontal */
+}
+
+/* Estilos para el HEADER */
+header {
+    display: grid;  /* Defino una cuadrícula bidimensional para posicionar los elementos */
+    align-items: stretch; /* Estiro los subelementos de la cabecera para rellenar */
+    grid-template-columns: 20% 40% 20% 20%;  /* Divido el header en tres columnas */
+    padding-left: 17%;
+    background-color: var(--color-negro);   /* Color para el fondo de la cabecera */
+}
+
+/* Estilos para el NAV */
+nav {
+    display: grid;  /* Defino una cuadrícula bidimensional para posicionar los elementos */
+    background-color: var(--color-nav); /* Aplico el color de fondo mediante variable */
+    font-weight: bold;  /* Pongo en negrita */
+    justify-content: center;    /* Alineo los apellidos a la izquierda del bloque */
+    top: 0; /* Lo posiciono en la parte superior */
+    width: 100%; /* Utilizo un ancho del 100% */
+}
+
+/* Estilos para el FOOTER */
+footer {
+    display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+    flex-direction: row;    /* Determino la dirección en la que se ordenarán los elementos en el espacio */
+    position: absolute; /* Coloco el footer respecto a la página entera */
+    background-color: var(--color-footer);   /* Aplico color de texto destacado */
+    justify-content: space-between; /* Distribuyo espacios entre y alrededor de los ítems flex */
+    font-weight: bold;  /* Lo pongo en negrita */
+    width: 100%;    /* Establezco el ancho del html al 100% */
+    padding-top: 1.5%;
+    height: 23%;    /* Establezco la altura del html al 23% */
+    border: 1px solid var(--color-negro);
+    top: 305%;  /* Especifico la posición del footer */
+    bottom: 0; /* Cambiado de top a bottom para que esté pegado al fondo */
+    justify-content: center;    /* Alineo los apellidos a la izquierda del bloque */
+}
+
+/* Aplico color de borde negro */
+header, nav, footer {
+    box-sizing: border-box;    /* Ajusto el modelo de caja para incluir el borde en el tamaño total */
+}
+/*-------------------------------------------------------------------------------*/
+/* ENCABEZADO */
+/* Estilos para el título h1 dentro del encabezado */
+header h1 {
+    color: var(--color-texto-blanco);
+    font-family: var(--font-secondary); /* Establezco la fuente para el título de la empresa mediante fuente de internet */
+    letter-spacing: 10px;   /* Separación de 30px entre cada carácter */
+    justify-content: center;    /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+    align-content: center;  /* Ajusto las líneas dentro del contenedor cuando haya espacio extra */
+    text-shadow: 5px 5px 5px #00d9ff, 10px 10px 10px #6200ff;   /* Aplico sombra de dos colores diferentes */
+    grid-column: span 1; /* Hace que el h1 abarque una columna completa */
+    font-size: 30px;
+}
+
+/* Estilos para las divisiones de la cabecera */
+.logo-container,
+.name-empresa-container,
+.producto-estrella-container,
+.btnHeader-container {
+    display: grid;  /* Defino una cuadrícula bidimensional para posicionar los elementos */
+    grid-column: span 1; /* Cada subzona abarca una columna completa */
+    justify-content: space-around;    /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+    align-content: center;  /* Ajusto las líneas dentro del contenedor cuando haya espacio extra */
+}
+
+/* Estilos para el logotipo de la empresa */
+.logo-container img {
+    object-fit: contain; /* Mantengo la relación de aspecto y ajusta la imagen dentro del contenedor */
+}
+
+.producto-estrella-container {
+    margin-right: 50%;
+}
+
+/* Estilos para el nombre de la empresa */
+.name-empresa-container {
+    font-weight: bold;  /* Pongo el texto en negrita */
+    margin-right: 85%;
+}
+
+/* Estilos para los botones de la cabecera */
+.btnHeader-container {
+    grid-gap: 2%; /* Especifico la distancia entre filas y columnas de la cuadrícula */
+    margin-right: 20%;
+}
+
+/* Estilos para los botones */
+#btnContacto,
+#btnInicioSesion {
+    font-family: var(--font-primary);   /* Establezco una fuente */
+    font-size: 15px; /* Establezco un tamaño al texto */
+}
+
+/* Estilos para cuando se pase el ratón por encima de los botones de la cabecera */
+#btnContacto:hover,
+#btnInicioSesion:hover {
+    color: var(--color-texto-blanco);   /* Establezco el color de texto a blanco */
+    background-color: var(--color-botones-background);  /* Establezco el fondo de los botones a azul */
+}
+/*-------------------------------------------------------------------------------*/
+/* ZONA DE NAVEGACIÓN */
+/* Estilo para los elementos <ul> que son descendientes de <nav> */
+nav ul {
+    width: 120%;
+}
+
+/* Estilo para los elementos <a> que son descendientes de <nav> */
+nav a {
+    text-decoration: none;  /* Le quito el subrayado y cualquier decoración */
+    color: var(--color-texto-blanco);   /* Establezco color de texto blanco */
+    padding: 1.7%;
+    font-family: var(--font-primary);   /* Establezco fuente de texto de variable */
+    font-size: 17px;    /* Establezco un tamaño al texto */
+}
+
+/* Para cuando añada los enlaces que se posicionen uno a la derecha de otro */
+nav li {
+    display: inline;    /* Establezco el espacio del contenido y el siguiente elemento se situará a la derecha */
+}
+
+/* Al pasar el ratón por encima */
+nav a:hover {
+    color: var(--color-enlace);
+}
+/*-------------------------------------------------------------------------------*/
+/* ZONA DE CONTENIDO 1 */
+/* PRODUCTOS */
+/* Estilos para los 2 section */
+.primera-section,
+.segunda-section {
+    display: grid;
+    box-sizing: border-box; /* Aseguro que el padding esté incluido en el ancho total */
+    text-align: center; /* Centro el texto */
+    width: 100%;    /* Para que ocupen todo el espacio horizontal */
+    height: 100%;   /* Para que ocupen todo el espacio vertical */
+    font-family: var(--font-primary);
+}
+
+/* Estilos para el primer section */
+.primera-section {
+    grid-template-columns: 2fr 1fr; /* Defino las líneas y el tamaño de cada columna */
+    grid-template-rows: repeat(2, 1fr); /* Defino las líneas y el tamaño de cada fila */
+}
+
+/* Estilos para el título del section */
+.primera-section > h2 {
+    opacity: 0; /* Oculto el texto (sale warning si no pongo título al section) */
+}
+
+/* Estilo para los articles dentro de primera-section */
+.primera-section article {
+    background-color: var(--color-blanco-clarito);
+    padding: 2%;
+    text-align: center;
+    border: 3px solid var(--color-enlace);
+}
+
+/* Estilos para cada zona del primer section */
+#zona1,
+#zona2,
+#zona3,
+#zona4 {
+    border-radius: 5%;  /* Hago el borde redondo */
+}
+
+/* Estilos para la zona 1 del section 1 */
+#zona1 {
+    display: grid;
+    position: absolute; /* Coloco el footer respecto a la página entera */
+    justify-content: center;
+    top: 30%;
+    left: 1%;
+    width: 40%;
+}
+
+/* Estilos para los productos de la zona 1 */
+.productos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Defino las líneas y el tamaño de cada columna */
+    grid-template-rows: repeat(2, 1fr); /* Defino las líneas y el tamaño de cada fila */
+    gap: 20px;
+}
+
+/* Estilos para los h2 de la zona 1 */
+#zona1 h2 {
+    font-family: var(--font-secondary);
+    font-size: 25px;
+}
+
+/* Estilos para las tarjetas de la zona 1 */
+.tarjeta {
+    background-color: var(--color-texto-blanco);
+    border-radius: 10%;  /* Hago el borde redondo */
+    border: 1px solid var(--color-negro);
+    height: 95%;  /* Establezco la altura de la tarjeta al 200% */
+    width: 100%;   /* Establezco el ancho de la tarjeta al 240% */
+    overflow: hidden;   /* Defino que todo el contenido que sobresale de la tarjeta se ocultará */
+    box-shadow: 2px 2px 2px var(--color-negro);  /* Aplico sombra de izquierda a derecha */
+}
+
+/* Estilos para la imágenes de la tarjeta de la zona 1 */
+.tarjeta img {
+    border-top-left-radius: 2%;   /* La esquina superior izquierda la redondeo */
+    border-top-right-radius: 2%;  /* La esquina superior derecha la redondeo */
+    width: 40%;   /* Establezco el ancho de la tarjeta al 100% */
+    padding-top: 5%;
+}
+
+/* Estilos para los títulos y párrafos */
+.tarjeta h3, .tarjeta p {
+    padding: 5%;
+    margin: 0;  /* 0 de margen */
+}
+
+/* Estilos al pasar el ratón por encima */
+.tarjeta:hover {
+    filter: brightness(90%);
+}
+/*-------------------------------------------------------------------------------*/
+/* TABLA DE PRODUCTOS Y SERVICIOS */
+/* Estilos para la zona 2 del section 1 */
+#zona2 {
+    text-align: center; /* Centro el texto */
+    display: flex;
+    flex-direction: column; /* Apilo los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin: 20px; /* Añado margen para separar del borde de la ventana */
+    margin-top: 6%;
+}
+
+/* Estilos para los h2 de la zona 2 */
+#zona2 h2 {
+    font-family: var(--font-secondary);
+    font-size: 25px;
+}
+
+/* Estilos para la tabla */
+table {
+    border-collapse: collapse;  /* Para que sea una línea el borde */
+    width: 100%; /* Hago que la tabla ocupe el 100% del ancho disponible */
+}
+
+/* Estilos para las celdas de la tabla */
+th, td {
+    border: 1px solid var(--color-tabla); /* Establezco el borde a 1px de tamaño sólido y colores de tabla */
+}
+
+/* Estilos para los th de la tabla */
+th {
+    background-color: #7e7e7e;
+}
+
+/* Estilos para los th de la tabla de las filas impares */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para los th de la tabla de las filas pares */
+tbody tr:nth-child(even) {
+    background-color: #e6e6e6;
+}
+
+/* Estilos para los tfoot de la tabla */
+tfoot {
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #a8a8a8;
+}
+/*-------------------------------------------------------------------------------*/
+/* PRODUCTO DESTACADO */
+/* Estilos para la zona 4 del section 1 */
+#zona4 {
+    background-color: var(--color-texto-blanco);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    /* Aplico sombra */
+    position: absolute; /* Coloco el footer respecto a la página entera */
+    top: 92%;
+    left: 67%;
+    right: 2%;
+}
+
+/* Estilos para los títulos la zona 4 */
+#zona4 h2 {
+    font-family: var(--font-secondary);
+    font-size: 25px;
+}
+
+/* Estilos para los títulos la zona 4 */
+#zona4 h3 {
+    font-family: var(--font-secondary);
+    font-size: 24px;
+    color: #272727;
+}
+
+/* Estilos para las imágenes que sean hijos directos de la zona 4 */
+#zona4 > img {
+    display: block; /* Defino cómo será mostrado, el comportamiento con respecto a los elementos que lo rodean */
+    margin: 0 auto; /* 0 de margen */
+    max-width: 100%;    /* Márgen máximo de 100% */
+    height: auto;   /* Altura auto */
+}
+
+/* Estilos para los párrafos que sean hijos directos de la zona 4 */
+#zona4 > p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Estilos para los strong que sean hijos directos de la zona 4 */
+#zona4 > strong {
+    display: block; /* Defino cómo será mostrado, el comportamiento con respecto a los elementos que lo rodean */
+    font-size: 20px;    /* Establezo tamaño de fuente de 20px */
+    color: #e44d26;
+}
+/*-------------------------------------------------------------------------------*/
+/* EMPRESAS QUE UTILIZAN NUESTRO PRODUCTO */
+/* Estilos para la zona 3 del section 1 */
+#zona3 {
+    display: grid;  /* Defino una cuadrícula bidimensional para posicionar los elementos */
+    justify-content: center;    /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+    position: absolute; /* Coloco el footer respecto a la página entera */
+    top: 100%;
+    left: 1%;
+    height: 80%;    /* Establezco altura de 70% */
+    width: 60%;     /* Establezco ancho de 60% */
+}
+
+/* Estilos para el div de empresas de la zona 3 */
+#zona3 .empresas-container {
+    display: grid;  /* Defino una cuadrícula bidimensional para posicionar los elementos */
+    grid-template-columns: repeat(4, 1fr);   /* Defino las líneas y el tamaño de cada columna */
+    grid-template-rows: repeat(3, 1fr);  /* Defino las líneas y el tamaño de cada fila */
+    gap: 50px;
+    margin-right: 2%;
+    height: 110%;
+}
+
+/* Estilos para los h2 de la zona 3 */
+#zona3 h2 {
+    font-family: var(--font-secondary);
+}
+
+/* Estilos para las tarjetas de la zona 3 */
+#zona3 .tarjeta {
+    display: block; /* Defino cómo será mostrado, el comportamiento con respecto a los elementos que lo rodean */
+    margin: auto;   /* Margen auto */
+    position: relative; /* Coloco el footer respecto al contenedor, y si no hay respecto a la página entera */
+    background-color: var(--color-texto-blanco);
+    border-radius: 10px;    /* Redondeo las esquinas */
+    box-shadow: -5px 5px 5px var(--color-negro);    /* Aplico sombra */
+    overflow: hidden; /* Agregado para ocultar cualquier desbordamiento */
+    margin-top: 20%;
+}
+
+/* Estilos para los títulos de cada tarjeta */
+.tarjeta > h2 {
+    font-family: var(--font-primary);
+    font-size: 15px;
+}
+
+/* Estilos para cuando paso el ratón por encima de la tarjeta */
+#zona3 .tarjeta:hover {
+    filter: brightness(90%);    /* Aplico un filtro que quita brillo */
+}
+
+/* Estilos para cuando paso el ratón por encima de la tarjeta aplico filtro al logo */
+#zona3 .tarjeta:hover .logo-empresa {
+    filter: hue-rotate(90deg);  /* Aplico el filtro de cambiar el tono del color de la imagen */
+}
+
+/* Estilos para los comentarios de las empresas */
+#zona3 .comments {
+    font-style: italic; /* Estilo de fuente cursiva */
+    font-size: 15px;
+}
+
+/* Estilos para el texto oculto */
+#zona3 .hidden-text {
+    visibility: hidden; /* Oculto el texto */
+    font-size: 14px;
+    color: #333;
+    position: absolute; /* Coloco el footer respecto a la página entera */
+    bottom: 0;  /* Posiciono en la parte inferior de la tarjeta */
+    left: 0;    /* Posiciono en la parte izquierda de la tarjeta */
+    right: 0;   /* Posiciono en la parte derecha de la tarjeta */
+    padding: 2%;
+    background-color: var(--color-texto-blanco);
+    border-radius: 0 0 10px 10px;   /* Redondeo las esquinas */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Aplico sombra */
+}
+
+/* Estilos para cuando se pasa por encima de la tarjeta el ratón aplico estilo al texto */
+#zona3 .tarjeta:hover .hidden-text {
+    visibility: visible;    /* Muestro el texto */
+}
+/*-------------------------------------------------------------------------------*/
+/* ZONA DE CONTENIDO 2 */
+/* Estilos para la segunda sección */
+.segunda-section {
+    display: grid;  /* Defino una cuadrícula bidimensional para posicionar los elementos */
+    position: absolute; /* Coloco el footer respecto a la página entera */
+    gap: 20px;  /* Establezco espacio de 20px */
+    background-color: var(--color-texto-blanco);
+    text-align: center; /* Centro el texto */
+    border: 3px solid var(--color-enlace);  /* Aplico borde de 3px sólido y de color azul */
+    top: 205%;
+    height: 90%;
+    width: 80%;
+    left: 10%;
+    border-radius: 5%;    /* Redondeo las esquinas */
+}
+
+/* Estilos para las noticias */
+.title-noticia {
+    text-align: center; /* Centro el texto */
+    font-family: var(--font-secondary);
+    margin-top: 5%;
+}
+
+/* Estilos para el contenedor del objetivo */
+.ods-container {
+    margin-top: -5%;
+    column-count: 2; /* Número de columnas*/ 
+    column-gap: 5%; /* Determino el espacio entre las columnas */
+    column-rule: 10px rgb(72, 90, 255) double; /* Defino el separador o regla indicando ancho, color y estilo*/
+    column-fill: balance; /* Establezco el relleno balanceado */
+    padding: 2%;
+    font-size: 15px;
+}
+
+/* Estilos para las imágenes */
+.ods8-img-caracteristicas,
+.ods8-img {
+    width: 40%;   /* Anchura de 650px */
+    height: 95%;  /* Altura de 250px */
+}
+
+/* Estilos para los párrafos del contenedor del objetivo */
+.ods-container p {
+    font-family: var(--font-secondary);
+}
+
+/* La letra primera de cada párrafo tiene que ser una letra capital (mínimo 20px) */
+.ods-container p::first-letter {
+    font-size: 40px;
+}
+/*-------------------------------------------------------------------------------*/
+/* FOOTER */
+/* Estilos para el contenedor de footer */
+.footer-container {
+    display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+    justify-content: center;    /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+}
+
+/* Estilos para los contenedores de cada zona del footer */
+.cookie-block,
+.info-block,
+.social-block {
+    flex: 1; /* Los ítems crecen y se ven del mismo tamaño */
+    margin-left: 5%;
+}
+
+/* Estilos al pasar el ratón por encima del contenedor de cookies */
+.cookie-block:hover {
+    outline: solid var(--color-enlace); /* Perfil visible */
+    border-radius: 5%;    /* Redondeo las esquinas */
+}
+
+/* Estilos para los h3 que son hijos del contenedor de footer */
+.footer-container h3 {
+    font-size: 25px; /* Tamaño de fuente diferente */
+    font-family: var(--font-primary);
+    margin: 5%;
+}
+
+/* Estilos para los h3 que son hijos del contenedor de redes sociales */
+.social-block h3 {
+    text-align: center; /* Centro el texto */
+}
+
+/* Estilos para las viñetas */
+ul {
+    list-style-type: square;    /* Viñetas cuadradas */
+    padding: 0;
+}
+
+/* Estilos para cada elemento de la lista */
+ul li {
+    cursor: pointer;    /* Cursor seleccionado */
+}
+
+/* Estilos para cuando se pasa el ratón por encima de los elementos de la lista */
+ul li:hover {
+    color: var(--color-enlace); /* Cambio color al pasar el ratón */
+}
+
+/* Estilos para el contenedor de las redes sociales */
+.social-icons {
+    display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+    justify-content: space-around;  /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+}
+
+/* Estilos para las imágenes del contenedor de redes sociales */
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--color-blanco-clarito);  /* Borde de 2px de grosor sólido y color blanco */
+    border-radius: 50%; /* Imágenes con borde redondeado */
+    transition: background-color 0.3s, border-color 0.3s;   /* Retraso para cuando se hace el hover */
+}
+
+/* Estilos para cuando se pase el ratón por encima de las imágnes del contenedor de redes sociales*/
+.social-icons img:hover {
+    background-color: var(--color-blanco-clarito); /* Cambiar fondo al pasar el ratón */
+    border-color: var(--color-nav); /* Cambiar color del borde al pasar el ratón */
+    filter: hue-rotate(90deg);  /* Aplico el filtro de cambiar el tono del color de la imagen */
+}
+/*-------------------------------------------------------------------------------*/
+/* MEDIA QUERY (EJERCICIO 06) */
+/* Media query para dispositivos con menos de 620px */
+/* Si pongo 620px y compruebo con "620px" no se aplicaría esta media query, así que le pongo "max-width: 619px" */
+@media only screen and (max-width: 619px) {
+    /* Estilos para la cabecera en dispositivos con menos de 620px */
+    .producto-estrella-container{
+        display: none; /* Oculto el bloque de la imagen del producto promocional */
+    }
+
+    /* Estilos para el nombre de la empresa */
+    header h1 {
+       font-size: 30px;
+       letter-spacing: 10px;
+    }
+
+    /* Estilos para el logo de la empresa */
+    .logo-container {
+        margin-left: 45%;
+    }
+
+     /* Estilos para los botones de la cabecera */
+    .btnHeader-container{
+        margin-left: 105%;
+    }
+
+     /* Estilos para la zona 1 */
+    #zona1 {
+        width: 40%;
+        margin-left: 27%;
+    }
+
+    /* Estilos para los productos de la zona 1 en dispositivos con menos de 620px */
+    .productos-container {
+       grid-template-columns: repeat(1, 1fr); /* Hace que los productos se muestren en una sola columna */
+    }
+
+    /* Oculto los productos después del tercer elemento */
+    .productos-container > *:nth-child(n+4) {
+        display: none;
+    }
+
+    /* Estilos para la zona de contenidos */
+    #zona2 {
+        display: none; /* Oculto el bloque de la tabla de productos */
+    }
+
+    /* Estilos para la zona 3 */
+    #zona3 {
+        display: none; /* Oculto el bloque de la tabla de productos */
+    }
+
+    /* Estilos para la zona 4 */
+    #zona4 {
+        margin-top: -20%;
+        margin-left: -65%;
+        top: 145%;
+        width: 90%;
+    }
+
+    /* Estilos para la segunda sección */
+    .segunda-section {
+        margin-top: -35%;
+        top: 220%;
+    }
+
+    /* Estilos para el footer */
+    footer {
+        top: 290%;
+    }
+    
+    /* El título de la noticia debe aparecer en minúscula */
+    .title-noticia {
+        text-transform: lowercase;
+    }
+
+    /* El texto de la noticia debe aparecer solo en una columna. */
+    .ods-container {
+        column-count: 1; /* Número de columnas*/ 
+    }
+
+    /* Se debe quitar la letra capital del texto */
+    .ods-container p::first-letter {
+        font-size: 15px;
+    }
+
+    /* Sólo debe aparecer una imagen */
+    .ods8-img {
+       display: none;
+    }
+
+    /* Estilos para una imagen de la sección 2 */
+    .ods8-img-caracteristicas {
+        height: 90%;
+        width: 100%;
+    }
+
+    /* Elimina los bloques relacionados con el formulario y los logos de las redes sociales. */
+    .cookie-block,
+    .social-block {
+        display: none;
+    }
+
+    /* Estilos para el título de la segunda sección del footer */
+    .info-block h3 {
+        text-align: center;
+    }
+
+    /* Cambiar la orientación de la lista */
+    .info-block ul  {
+        display: flex;
+        margin-top: 10%;
+        justify-content: center;
+        flex-direction: row; /* Cambia a 'column' si deseas una orientación vertical */
+    }
+
+    /* Estilos para cada opción de la lista */
+    .info-block li {
+        margin-right: 20%; /* Añade un margen entre los elementos de la lista */
+    }
+
+    /* Quita las viñetas de la lista */
+    .info-block ul {
+        list-style-type: none;  /* SE PUEDE UTILIZAR :marker */
+    }
+
+    /* Al pasar por cada una de las opciones debe subrayarse la opción seleccionada. */
+    .info-block ul li:hover {
+        text-decoration: underline;
+    }
+}
